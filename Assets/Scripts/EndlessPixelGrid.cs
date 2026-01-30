@@ -23,6 +23,22 @@ public class EndlessPixelGrid : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D))
             CommitInputLine();
+
+        if (Input.GetKeyDown(KeyCode.G))
+            ResetAll();
+
+        void ResetAll()
+        {
+            for (int r = 0; r < 10; r++)
+                for (int c = 0; c < 7; c++)
+                    grid[r, c] = false;
+
+            for (int i = 0; i < 7; i++)
+                inputLine[i] = false;
+
+            RenderAll();
+        }
+
     }
 
     void CommitInputLine()
